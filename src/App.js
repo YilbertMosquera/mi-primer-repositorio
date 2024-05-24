@@ -1,22 +1,19 @@
 import './App.css';
-import Header from './components/header';
-import Footer from './components/footer';
-import Menu from './components/menu';
-import Aside from './components/aside';
-import Contents from './components/content';
+import Home from './pages/home';
+import Recipes from './pages/recipes';
+import Contact from './pages/contact';
+import Ours from './pages/ours';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <Header />
-      <Menu />
-      <div className="container mt-5">
-        <div className="row">
-          <Aside />
-          <Contents/>
-        </div>
-      </div>
-      <Footer />
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/Ours' element={<Ours/>}/>
+        <Route path='/Recipies' element={<Recipes/>}/>
+        <Route path='/Contact' element={<Contact/>}/>
+      </Routes>      
     </>
   );
 }
